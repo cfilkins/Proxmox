@@ -18,7 +18,7 @@ EOF
 }
 header_info
 echo -e "Loading..."
-APP="Omada"
+APP="OmadaV3"
 var_disk="8"
 var_cpu="2"
 var_ram="2048"
@@ -53,7 +53,7 @@ function default_settings() {
 function update_script() {
 header_info
 if [[ ! -d /opt/tplink ]]; then msg_error "No ${APP} Installation Found!"; exit; fi
-latest_url=$(curl -fsSL "https://www.tp-link.com/us/support/download/omada-software-controller/" | grep -o 'https://.*x64.deb' | head -n1)
+latest_url=$(curl -fsSL "https://www.tp-link.com/us/support/download/omada-software-controller/v3/" | grep -o 'https://.*x64.deb' | head -n1)
 latest_version=$(basename "${latest_url}" | sed -e 's/.*ller_//;s/_Li.*//')
 if [ -z "${latest_version}" ]; then
   msg_error "It seems that the server (tp-link.com) might be down. Please try again at a later time."
